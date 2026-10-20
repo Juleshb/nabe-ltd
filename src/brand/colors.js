@@ -1,0 +1,7 @@
+export const CHARCOAL = '#203231'
+export const BURGUNDY = '#702838'
+export const BROWN = '#604633'
+export const PAPER = '#F4F1EB'
+export const TAGLINE = 'Precision in design, excellent in construction'
+export const LEGAL = 'National Benchmark Engineering Ltd'
+export const SHORT = 'NABE'
