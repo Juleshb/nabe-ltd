@@ -8,31 +8,31 @@ import {
 const files = [
   {
     title: 'Emblem — colour',
-    note: 'NB mark on a transparent field. Use on light backgrounds.',
+    note: 'Helmet and house-A on a transparent field. Use on light backgrounds.',
     svg: () => markSvg({ reverse: false }),
     name: 'NABE-emblem-colour',
-    png: [1000, 840],
+    png: [820, 1000],
   },
   {
     title: 'Emblem — reverse',
-    note: 'NB mark on charcoal. Use on dark backgrounds.',
+    note: 'Helmet and house-A on charcoal. Use on dark backgrounds.',
     svg: () => markSvg({ reverse: true }),
     name: 'NABE-emblem-reverse',
-    png: [1000, 840],
+    png: [820, 1000],
   },
   {
     title: 'Lockup — colour',
-    note: 'Emblem + NABE + legal name on paper.',
+    note: 'NABE wordmark + legal name on paper.',
     svg: () => lockupSvg({ reverse: false }),
     name: 'NABE-lockup-colour',
-    png: [1900, 500],
+    png: [1840, 440],
   },
   {
     title: 'Lockup — reverse',
-    note: 'Emblem + NABE + legal name on charcoal.',
+    note: 'NABE wordmark + legal name on charcoal.',
     svg: () => lockupSvg({ reverse: true }),
     name: 'NABE-lockup-reverse',
-    png: [1900, 500],
+    png: [1840, 440],
   },
 ]
 

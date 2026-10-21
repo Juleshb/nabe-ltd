@@ -34,7 +34,7 @@ export default function Header() {
             onClick={() => setOpen(false)}
             aria-label="National Benchmark Engineering Ltd home"
           >
-            <Logo variant="onLight" size={50} />
+            <Logo variant="onLight" size={40} showTagline />
           </Link>
           <button
             className="menu-btn"

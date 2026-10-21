@@ -1,4 +1,4 @@
-import { BURGUNDY, CHARCOAL } from '../brand/colors'
+import { CHARCOAL, GOLD } from '../brand/colors'
 
 export function ElementBuildings({ color = CHARCOAL }) {
   return (
@@ -8,7 +8,7 @@ export function ElementBuildings({ color = CHARCOAL }) {
   )
 }
 
-export function ElementCrane({ color = CHARCOAL, accent = BURGUNDY }) {
+export function ElementCrane({ color = CHARCOAL, accent = GOLD }) {
   return (
     <svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true">
       <rect x="28" y="14" width="5" height="42" fill={color} />
@@ -21,7 +21,7 @@ export function ElementCrane({ color = CHARCOAL, accent = BURGUNDY }) {
   )
 }
 
-export function ElementCurve({ color = BURGUNDY }) {
+export function ElementCurve({ color = GOLD }) {
   return (
     <svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true">
       <path
@@ -32,7 +32,7 @@ export function ElementCurve({ color = BURGUNDY }) {
   )
 }
 
-export function ServiceIcon({ name, color = CHARCOAL, accent = BURGUNDY }) {
+export function ServiceIcon({ name, color = CHARCOAL, accent = GOLD }) {
   const icons = {
     building: (
       <path

@@ -1,45 +1,57 @@
-import { BURGUNDY, CHARCOAL, PAPER, TAGLINE } from './colors'
+import { CHARCOAL, GOLD, GOLD_DEEP, PAPER, TAGLINE } from './colors'
 
-export function markInner(ink, accent) {
+export const WORDMARK_VB = '0 0 560 200'
+export const MARK_VB = '132 0 164 200'
+
+export function wordmarkInner(ink, gold, deep) {
   return `
-    <path fill="${accent}" d="M10 150V28h18l40 78V28h18v122H68L28 72v78H10Z"/>
-    <path fill="${ink}" d="M42 138V88h11v50H42Zm16 0V72h11v66H58Zm16 0V56h11v82H74Z"/>
-    <path fill="${ink}" fill-rule="evenodd" d="M102 36h46c18 0 30 12 30 28 0 12-7 21-19 25 15 4 26 15 26 32 0 20-17 33-40 33H102V36Zm16 14v24h24c8 0 13-5 13-12s-5-12-13-12H118Zm0 40v30h28c10 0 16-6 16-15s-6-15-16-15h-28Z"/>
-    <rect x="100" y="10" width="8" height="140" fill="${accent}"/>
-    <path fill="${accent}" d="M36 16h132v7H36z"/>
-    <path fill="${accent}" d="M96 8h16v14H96z"/>
-    <circle cx="162" cy="19.5" r="5.5" fill="${accent}"/>
-    <path d="M162 25v28" stroke="${accent}" stroke-width="3.5" stroke-linecap="round"/>
-    <path fill="${accent}" d="M156 53h12c0 8-12 10-12 0Z"/>
-    <path fill="${ink}" d="M4 142c40-14 86 6 188 22l-4 9C90 157 46 139 2 151L4 142Z"/>
-    <path fill="${accent}" d="M10 140c42-12 88 6 162 20l-4 7C96 153 52 136 8 147l2-7Z"/>
+    <g transform="translate(159 14)">
+      <path fill="${gold}" d="M18 52C16 24 32 6 55 6c22 0 38 16 36 46H18Z"/>
+      <path fill="${gold}" d="M4 50c8 12 92 12 102 0-10-6-18-8-28-8H32C20 42 10 45 4 50Z"/>
+      <path fill="${deep}" d="M8 52c10 8 36 12 47 12s37-4 47-12c-10 3-28 8-47 8S18 55 8 52Z"/>
+      <rect x="53" y="10" width="4" height="36" rx="2" fill="${deep}" opacity="0.35"/>
+      <ellipse cx="90" cy="46" rx="8" ry="10" fill="${deep}"/>
+      <ellipse cx="90" cy="46" rx="3.8" ry="5.5" fill="${gold}"/>
+    </g>
+    <path fill="${ink}" d="M20 188V76h28l56 76V76h28v112h-28L48 112v76H20Z"/>
+    <path fill="${ink}" d="M214 76l66 112h-32L214 122 180 188h-32L214 76Z"/>
+    <path fill="${gold}" d="M186 146 214 112l28 34h-10l-18-22-18 22z"/>
+    <rect fill="${gold}" x="208" y="150" width="5.2" height="5.2"/>
+    <rect fill="${gold}" x="215.8" y="150" width="5.2" height="5.2"/>
+    <rect fill="${gold}" x="208" y="157.8" width="5.2" height="5.2"/>
+    <rect fill="${gold}" x="215.8" y="157.8" width="5.2" height="5.2"/>
+    <rect fill="${ink}" x="300" y="76" width="30" height="112"/>
+    <path fill="${ink}" fill-rule="evenodd" d="M330 76h34c26 0 40 14 40 28 0 14-14 28-40 28H330V76Zm22 16h14c12 0 20 6 20 12s-8 12-20 12h-14V92Z"/>
+    <path fill="${ink}" fill-rule="evenodd" d="M330 132h38c28 0 44 14 44 28 0 16-16 28-44 28H330v-56Zm22 16h18c14 0 24 6 24 12s-10 12-24 12h-18v-24Z"/>
+    <path fill="${ink}" d="M432 76h108v24H460v24h72v22H460v22h80v20H432V76Z"/>
   `
 }
 
 export function markSvg({ reverse = false } = {}) {
   const ink = reverse ? PAPER : CHARCOAL
-  const accent = BURGUNDY
+  const gold = GOLD
+  const deep = GOLD_DEEP
   const bg = reverse ? CHARCOAL : 'none'
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 168" width="1000" height="840" fill="none">
-  ${reverse ? `<rect width="200" height="168" rx="12" fill="${bg}"/>` : ''}
-  ${markInner(ink, accent)}
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${MARK_VB}" width="820" height="1000" fill="none">
+  ${reverse ? `<rect x="132" width="164" height="200" rx="12" fill="${bg}"/>` : ''}
+  ${wordmarkInner(ink, gold, deep)}
 </svg>`
 }
 
 export function lockupSvg({ reverse = false } = {}) {
   const ink = reverse ? PAPER : CHARCOAL
-  const accent = BURGUNDY
+  const gold = GOLD
+  const deep = GOLD_DEEP
   const bg = reverse ? CHARCOAL : PAPER
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" width="1900" height="500" fill="none">
-  <rect width="760" height="200" fill="${bg}"/>
-  <g transform="translate(24 16)">
-    ${markInner(ink, accent)}
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="1840" height="440" fill="none">
+  <rect width="920" height="220" fill="${bg}"/>
+  <g transform="translate(16 10)">
+    ${wordmarkInner(ink, gold, deep)}
   </g>
-  <text x="250" y="118" fill="${ink}" font-family="Montserrat, Helvetica Neue, Arial Black, sans-serif" font-size="64" font-weight="800" letter-spacing="-2">NABE</text>
-  <rect x="478" y="58" width="1.5" height="84" fill="${ink}" opacity="0.28"/>
-  <text x="500" y="92" fill="${ink}" font-family="Montserrat, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2.4">NATIONAL BENCHMARK</text>
-  <text x="500" y="118" fill="${accent}" font-family="Montserrat, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2.4">ENGINEERING LTD</text>
-  <text x="500" y="146" fill="${ink}" opacity="0.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="12">${TAGLINE}</text>
+  <rect x="596" y="72" width="1.5" height="84" fill="${ink}" opacity="0.28"/>
+  <text x="616" y="104" fill="${ink}" font-family="Montserrat, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2.4">NATIONAL BENCHMARK</text>
+  <text x="616" y="128" fill="${gold}" font-family="Montserrat, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2.4">ENGINEERING LTD</text>
+  <text x="616" y="154" fill="${ink}" opacity="0.7" font-family="Helvetica Neue, Arial, sans-serif" font-size="12">${TAGLINE}</text>
 </svg>`
 }
 

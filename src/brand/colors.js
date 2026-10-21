@@ -1,7 +1,9 @@
-export const CHARCOAL = '#203231'
-export const BURGUNDY = '#702838'
-export const BROWN = '#604633'
-export const PAPER = '#F4F1EB'
+export const CHARCOAL = '#25282B'
+export const GOLD = '#C6A66B'
+export const GOLD_DEEP = '#8F7343'
+export const PAPER = '#F2F2EF'
+export const BURGUNDY = GOLD
+export const BROWN = GOLD_DEEP
 export const TAGLINE = 'Precision in design, excellent in construction'
 export const LEGAL = 'National Benchmark Engineering Ltd'
 export const SHORT = 'NABE'

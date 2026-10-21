@@ -1,24 +1,30 @@
 import Logo, { TAGLINE, Monogram } from '../components/Logo'
 import LogoDownloads from '../components/LogoDownloads'
-import {
-  ElementBuildings,
-  ElementCrane,
-  ElementCurve,
-  ServiceIcon,
-} from '../components/BrandElements'
+import { ServiceIcon } from '../components/BrandElements'
 
 const colors = [
-  { name: 'Deep Charcoal', hex: '#203231', use: 'Primary. Logo ink, headers, vehicles.' },
-  { name: 'Burgundy', hex: '#702838', use: 'Accent. Crane hook, curve, Engineering Ltd.' },
-  { name: 'Chocolate Brown', hex: '#604633', use: 'Secondary. Supporting graphics.' },
-  { name: 'Warm Off-White', hex: '#F4F1EB', use: 'Background. Stationery and website.' },
+  {
+    name: 'Deep charcoal',
+    hex: '#25282B',
+    use: 'Primary — 60%. Wordmark, headers, vehicles. Strength and stability.',
+  },
+  {
+    name: 'Champagne gold',
+    hex: '#C6A66B',
+    use: 'Accent — 10%. Helmet, house in the A, buttons. Precision and quality.',
+  },
+  {
+    name: 'Off-white',
+    hex: '#F2F2EF',
+    use: 'Background — 30%. Paper, screens, stationery. Clarity and readability.',
+  },
 ]
 
 const elements = [
-  { title: 'NB Monogram', text: 'N + B locked as one mark — National Benchmark.', icon: 'mono' },
-  { title: 'Construction Crane', text: 'Delivery, site work and building in progress.', icon: 'crane' },
-  { title: 'Buildings', text: 'Three rising bars: growth, structure, skyline.', icon: 'buildings' },
-  { title: 'Dynamic Curve', text: 'Progress and a solid foundation under every job.', icon: 'curve' },
+  { title: 'NABE wordmark', text: 'The short name is the logo — set in a high-contrast construction serif.', icon: 'word' },
+  { title: 'House in the A', text: 'The A is a gable: roof and window stand for architecture and home.', icon: 'house' },
+  { title: 'Safety helmet', text: 'A flat site helmet sits on the A — construction, people and care on site.', icon: 'hat' },
+  { title: 'Gold on charcoal', text: 'Gold is reserved for the helmet and the house. Letters stay charcoal.', icon: 'gold' },
 ]
 
 const services = [
@@ -49,16 +55,17 @@ export default function Identity() {
         <div className="wrap grid-2">
           <div>
             <p className="eyebrow">The mark</p>
-            <h2 className="display">Emblem. Name. Explanation.</h2>
+            <h2 className="display">Name. House. Helmet.</h2>
             <p className="muted">
-              The lockup follows a professional-body layout: a circular
-              construction emblem, the short name NABE, then the legal name
-              stacked beside it.
+              The proposed concept is kept, then drawn as a flat vector mark:
+              NABE in charcoal, a gold gable in the letter A, and a gold helmet
+              on the peak. No 3D shine, no photo texture — it has to hold at
+              24 pixels and on a site board.
             </p>
             <p className="muted" style={{ marginTop: '1rem' }}>
-              The circle holds buildings and a crane — design and construction.
-              NABE is National Benchmark Engineering. The line under the name is
-              the tagline: “{TAGLINE}”.
+              The house is design. The helmet is construction. Together they
+              read National Benchmark Engineering. The legal name sits beside
+              the wordmark. The line under the name is the tagline: “{TAGLINE}”.
             </p>
           </div>
           <div className="lockup-stage lockup-light">
@@ -84,11 +91,11 @@ export default function Identity() {
             </figure>
             <figure className="lockup-stage lockup-light">
               <Monogram variant="onLight" size={120} />
-              <figcaption>Emblem — colour</figcaption>
+              <figcaption>Icon — helmet and A</figcaption>
             </figure>
             <figure className="lockup-stage lockup-dark">
               <Monogram variant="onDark" size={120} />
-              <figcaption>Emblem — reverse</figcaption>
+              <figcaption>Icon — reverse</figcaption>
             </figure>
           </div>
         </div>
@@ -124,10 +131,16 @@ export default function Identity() {
           <div className="elements">
             {elements.map((item) => (
               <article className="element" key={item.title}>
-                {item.icon === 'mono' ? <Monogram variant="onLight" size={72} /> : null}
-                {item.icon === 'crane' ? <ElementCrane /> : null}
-                {item.icon === 'buildings' ? <ElementBuildings /> : null}
-                {item.icon === 'curve' ? <ElementCurve /> : null}
+                {item.icon === 'word' ? <Logo lockup="wordmark" size={52} variant="onLight" /> : null}
+                {item.icon === 'house' ? <Monogram variant="onLight" size={72} /> : null}
+                {item.icon === 'hat' ? <Monogram variant="onLight" size={72} /> : null}
+                {item.icon === 'gold' ? (
+                  <span
+                    className="element-swatch"
+                    style={{ background: '#C6A66B' }}
+                    aria-hidden="true"
+                  />
+                ) : null}
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </article>
@@ -145,7 +158,7 @@ export default function Identity() {
           <div className="service-grid">
             {services.map(([icon, title]) => (
               <article className="service-cell" key={title}>
-                <ServiceIcon name={icon} color="#F4F1EB" accent="#702838" />
+                <ServiceIcon name={icon} color="#F2F2EF" accent="#C6A66B" />
                 <h3>{title}</h3>
               </article>
             ))}
@@ -178,11 +191,11 @@ export default function Identity() {
             </article>
 
             <article className="biz-card" aria-label="Business card mockup">
-              <div className="card-face card-front card-corner" style={{ background: '#fff', color: '#203231' }}>
+              <div className="card-face card-front card-corner" style={{ background: '#fff', color: '#25282B' }}>
                 <Logo size={40} variant="onLight" />
                 <p className="tagline">“{TAGLINE}”</p>
               </div>
-              <div className="card-face card-back" style={{ background: '#203231', color: '#F4F1EB' }}>
+              <div className="card-face card-back" style={{ background: '#25282B', color: '#F2F2EF' }}>
                 <p className="card-name" style={{ fontFamily: 'Montserrat, sans-serif', textTransform: 'uppercase', fontSize: '0.9rem' }}>
                   Eng. Tuyisingize Emmanuel
                 </p>
