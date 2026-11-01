@@ -11,6 +11,7 @@ const people = [
     name: 'Eng. Niyinzima Patrick',
     role: 'Architecture and Design',
     mark: 'NP',
+    photo: '/team/Eng._Niyinzima_Patrick.jpg',
     focus: 'Architectural planning, technical drawings and design coordination.',
   },
   {
@@ -35,18 +36,25 @@ const people = [
     focus: 'Mechanical services for comfort, air quality and building performance.',
   },
   {
-    name: 'Eng. Ishimwe Blese',
+    name: 'Eng. Ishimwe Blaise',
     role: 'Plumbing',
     mark: 'IB',
     photo: '/team/Eng._Ishimwe_Blese.jpg',
     focus: 'Water supply, drainage and sanitary systems for buildings.',
   },
   {
-    name: 'Hakizimana Die Done',
+    name: 'Hakizimana Dieudonné',
     role: 'Electricity',
     mark: 'HD',
     photo: '/team/Hakizimana_Die_Done.jpg',
     focus: 'Power distribution, lighting and electrical installation on site.',
+  },
+  {
+    name: 'Ishimwe Zawadi',
+    role: 'Finance and Customer Care Officer',
+    mark: 'IZ',
+    photo: '/team/Ishimwe_Zawadi.jpg',
+    focus: 'Accounts, billing and the day-to-day care of NABE clients.',
   },
 ]
 
@@ -93,7 +101,7 @@ export default function Team() {
           </p>
           <dl className="lead-stats">
             <div>
-              <dt>7</dt>
+              <dt>8</dt>
               <dd>Named professionals</dd>
             </div>
             <div>

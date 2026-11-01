@@ -35,7 +35,7 @@ const groups = [
   },
   {
     icon: 'survey',
-    title: 'Topographical Surveying',
+    title: 'Topographical and Surveying',
     items: [
       'Land and topographic surveying',
       'Construction setting-out and level surveys',
@@ -43,10 +43,18 @@ const groups = [
   },
   {
     icon: 'permits',
-    title: 'Construction Permits & Consultancy',
+    title: 'Construction Permits',
     items: [
       'Assistance with building permit documentation',
-      'Technical advice and feasibility support',
+      'Permit drawings and submission support',
+    ],
+  },
+  {
+    icon: 'consult',
+    title: 'Consultancy and Advice',
+    items: [
+      'Technical consultation and feasibility support',
+      'Professional advice across the project cycle',
     ],
   },
   {
@@ -59,10 +67,18 @@ const groups = [
   },
   {
     icon: 'people',
-    title: 'Project Management & Technical Advice',
+    title: 'Project Management',
     items: [
       'Project planning and coordination',
       'Cost estimates, BoQ and site leadership',
+    ],
+  },
+  {
+    icon: 'hvac',
+    title: 'Air Conditioning and Ventilation',
+    items: [
+      'Air-conditioning design and installation',
+      'Ventilation for comfort and indoor air quality',
     ],
   },
 ]
@@ -85,7 +101,7 @@ export default function Services() {
           {groups.map((group, i) => (
             <article className="card" key={group.title}>
               <ServiceIcon name={group.icon} />
-              <span className="idx">0{i + 1}</span>
+              <span className="idx">{String(i + 1).padStart(2, '0')}</span>
               <h3>{group.title}</h3>
               <ul className="list">
                 {group.items.map((item) => (

@@ -29,7 +29,9 @@ export default function Footer() {
           <div>
             <h4>Contact</h4>
             <p>
-              Kigali, Rwanda
+              Rubavu, Mahoko
+              <br />
+              In front of Reverend Coffee
               <br />
               <a href="tel:+250781126059">+250 781 126 059</a>
               <br />

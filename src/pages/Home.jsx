@@ -1,21 +1,74 @@
 import { Link } from 'react-router-dom'
+import { ServiceIcon } from '../components/BrandElements'
 
-const practices = [
+const families = [
   {
-    title: 'Construction & Civil Works',
-    text: 'Building construction, renovation, supervision and project coordination.',
+    label: 'Design',
+    intro: 'Spaces, structure and interiors, planned as one drawing set.',
+    items: [
+      {
+        icon: 'architecture',
+        title: 'Architectural Design',
+        text: 'Drawings, planning and design coordination.',
+      },
+      {
+        icon: 'interior',
+        title: 'Interior Design',
+        text: 'Space planning, furniture and finishing.',
+      },
+      {
+        icon: 'structure',
+        title: 'Structural Design & Analysis',
+        text: 'Assessment and construction drawings.',
+      },
+    ],
   },
   {
-    title: 'Architecture & Structure',
-    text: 'Architectural planning, structural analysis and construction drawings.',
+    label: 'Construction',
+    intro: 'Site delivery, systems and the people who run the programme.',
+    items: [
+      {
+        icon: 'building',
+        title: 'Building Construction',
+        text: 'Execution, supervision and coordination.',
+      },
+      {
+        icon: 'maintenance',
+        title: 'Building Maintenance & Renovation',
+        text: 'Renovation, maintenance and fit-out.',
+      },
+      {
+        icon: 'hvac',
+        title: 'Air Conditioning and Ventilation',
+        text: 'Comfort, air quality and mechanical services.',
+      },
+      {
+        icon: 'people',
+        title: 'Project Management',
+        text: 'Planning, BoQ, cost and site leadership.',
+      },
+    ],
   },
   {
-    title: 'Surveying & Measurement',
-    text: 'Topographic surveys, setting-out, site levels and survey data.',
-  },
-  {
-    title: 'Consultancy & Permits',
-    text: 'Cost estimates, feasibility support and permit documentation.',
+    label: 'Survey, permits & advice',
+    intro: 'The measurements, papers and counsel a project needs to proceed.',
+    items: [
+      {
+        icon: 'survey',
+        title: 'Topographical and Surveying',
+        text: 'Land survey, setting-out and levels.',
+      },
+      {
+        icon: 'permits',
+        title: 'Construction Permits',
+        text: 'Permit drawings and documentation.',
+      },
+      {
+        icon: 'consult',
+        title: 'Consultancy and Advice',
+        text: 'Feasibility and professional advice.',
+      },
+    ],
   },
 ]
 
@@ -66,14 +119,41 @@ export default function Home() {
       </section>
 
       <section className="section overlap">
-        <div className="wrap cards">
-          {practices.map((item) => (
-            <article className="card lift" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <Link to="/services">Read more →</Link>
-            </article>
-          ))}
+        <div className="wrap">
+          <div className="home-services">
+            <header className="home-services-head">
+              <div>
+                <p className="eyebrow">Services</p>
+                <h2>Collected under one practice.</h2>
+                <p>
+                  Design, construction, surveying, permits, consultancy and
+                  mechanical services — one team, one project cycle.
+                </p>
+              </div>
+              <Link className="btn btn-navy" to="/services">
+                View all services
+              </Link>
+            </header>
+            <div className="service-families">
+              {families.map((family) => (
+                <article className="service-family" key={family.label}>
+                  <p className="service-family-label">{family.label}</p>
+                  <p className="service-family-intro">{family.intro}</p>
+                  <ul>
+                    {family.items.map((item) => (
+                      <li key={item.title}>
+                        <ServiceIcon name={item.icon} />
+                        <div>
+                          <h3>{item.title}</h3>
+                          <p>{item.text}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

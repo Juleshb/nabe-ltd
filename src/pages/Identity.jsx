@@ -32,10 +32,12 @@ const services = [
   ['architecture', 'Architectural Design'],
   ['interior', 'Interior Design'],
   ['structure', 'Structural Design & Analysis'],
-  ['survey', 'Topographical Surveying'],
-  ['permits', 'Construction Permits & Consultancy'],
+  ['survey', 'Topographical and Surveying'],
+  ['permits', 'Construction Permits'],
+  ['consult', 'Consultancy and Advice'],
   ['maintenance', 'Building Maintenance & Renovation'],
-  ['people', 'Project Management & Technical Advice'],
+  ['people', 'Project Management'],
+  ['hvac', 'Air Conditioning and Ventilation'],
 ]
 
 export default function Identity() {
@@ -153,7 +155,7 @@ export default function Identity() {
         <div className="wrap">
           <div className="section-head">
             <p className="eyebrow">Our services</p>
-            <h2>Eight lines of practice.</h2>
+            <h2>Lines of practice.</h2>
           </div>
           <div className="service-grid">
             {services.map(([icon, title]) => (
@@ -176,7 +178,7 @@ export default function Identity() {
             <article className="letterhead" aria-label="Letterhead mockup">
               <header>
                 <Logo size="sm" variant="onLight" />
-                <span className="mono">Kigali, Rwanda</span>
+                <span className="mono">Rubavu, Mahoko · Reverend Coffee</span>
               </header>
               <div className="letter-rule" />
               <p className="muted">
@@ -205,7 +207,7 @@ export default function Identity() {
                   <br />
                   info@nbengineering.rw
                   <br />
-                  Kigali, Rwanda
+                  Rubavu, Mahoko · in front of Reverend Coffee
                 </p>
               </div>
             </article>

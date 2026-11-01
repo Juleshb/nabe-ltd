@@ -17,8 +17,8 @@ export default function Contact() {
           <h1>Bring the brief. We will set the benchmark.</h1>
           <p>
             Share a project outline for construction, design, surveying or
-            consultancy. Replace the placeholder address with the registered
-            office details before public use.
+            consultancy. Visit us in Rubavu, Mahoko, in front of Reverend
+            Coffee.
           </p>
         </div>
       </section>
@@ -26,12 +26,14 @@ export default function Contact() {
         <div className="wrap contact-grid">
           <div>
             <h2 className="display" style={{ fontSize: '2rem' }}>
-              Kigali office
+              Rubavu office
             </h2>
             <p className="muted">
               National Benchmark Engineering Ltd
               <br />
-              Kigali, Rwanda
+              Rubavu, Mahoko
+              <br />
+              In front of Reverend Coffee
               <br />
               <a href="tel:+250781126059">+250 781 126 059</a>
               <br />
@@ -59,8 +61,11 @@ export default function Contact() {
                 <option>Construction</option>
                 <option>Architecture & structure</option>
                 <option>Interior design</option>
-                <option>Surveying</option>
-                <option>Consultancy</option>
+                <option>Topographical and surveying</option>
+                <option>Construction permits</option>
+                <option>Consultancy and advice</option>
+                <option>Project management</option>
+                <option>Air conditioning and ventilation</option>
               </select>
             </label>
             <label>
@@ -73,7 +78,7 @@ export default function Contact() {
             {sent ? (
               <p className="success" role="status">
                 Thank you. This form is a front-end prototype — connect it to
-                email when the company address is confirmed.
+                email for live enquiries.
               </p>
             ) : null}
           </form>

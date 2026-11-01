@@ -88,6 +88,24 @@ export function ServiceIcon({ name, color = CHARCOAL, accent = GOLD }) {
         <path d="M10 48c2-10 10-14 18-14s16 4 18 14" fill="none" stroke={color} strokeWidth="2.2" />
       </>
     ),
+    consult: (
+      <>
+        <rect x="12" y="14" width="40" height="28" rx="4" fill="none" stroke={color} strokeWidth="2.2" />
+        <path d="M22 24h20M22 32h14" stroke={color} strokeWidth="2" />
+        <path d="M24 42l8-6h8" fill="none" stroke={accent} strokeWidth="2.2" />
+      </>
+    ),
+    hvac: (
+      <>
+        <circle cx="32" cy="32" r="8" fill="none" stroke={accent} strokeWidth="2.2" />
+        <path
+          d="M32 12v10M32 42v10M12 32h10M42 32h10M18 18l7 7M39 39l7 7M18 46l7-7M39 25l7-7"
+          stroke={color}
+          strokeWidth="2.2"
+          strokeLinecap="round"
+        />
+      </>
+    ),
   }
 
   return (
